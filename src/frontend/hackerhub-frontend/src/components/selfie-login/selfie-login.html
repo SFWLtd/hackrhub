@@ -1,6 +1,13 @@
 <template>
-  <video ref="video" width="320" height="240" preload autoplay loop muted></video>
-  <canvas ref="canvas" width="320" height="240"></canvas>
-  <br/>
-  <button click.trigger="takePhoto()">Login</button>
+  <div id="home">
+    <div class="column is-offset-one-quarter is-6">
+      <div class="video-wrapper">
+        <video ref="video" width="500" height="500" preload autoplay loop muted></video>
+      </div>
+      <canvas ref="canvas" width="500" height="300" class="hidden"></canvas>
+      <br/>
+      <button class="button is-primary" click.trigger="takePhoto()">Login</button>
+      ${message}
+    </div>
+  </div>
 </template>
