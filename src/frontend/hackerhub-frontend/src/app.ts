@@ -6,6 +6,8 @@ export class App {
       config.map([        
           { route: ['','home'],  name: 'home', nav: true ,
             moduleId: './components/home/home', title:'Home' },
+          { route: ['selfie-login'],  name: 'selfie-login', nav: true ,
+            moduleId: './components/selfie-login/selfie-login', title:'Selfie-Login' },
           { route: 'ideas',  name: 'ideas', nav: true,
             moduleId: './components/idea-generator/idea-generator', title:'Idea Generator' },
           { route: 'people',  name: 'people', nav: true,
