@@ -1,17 +1,23 @@
 <template>
-    <div repeat.for="person of people" class="box">
-        <article class="media">
-            <div class="media-left">
-                <figure class="image is-64x64">
-                    <img src="${person.img}">
-                </figure>
+    <require from="../hackr-nav/hackr-nav.html"></require>
+    <hackr-nav></hackr-nav>
+    <section class="section">
+        <div class="container">
+            <div repeat.for="person of people" class="box">
+                <article class="media">
+                    <div class="media-left">
+                        <figure class="image is-64x64">
+                            <img src="${person.img}">
+                        </figure>
+                    </div>
+                    <div class="media-content">
+                        <div class="content">
+                            <p class="title is-4">${person.name}</p>
+                            <p class="subtitle is-6">${person.team}</p>
+                        </div>
+                    </div>
+                </article>
             </div>
-            <div class="media-content">
-                <div class="content">
-                    <p class="title is-4">${person.name}</p>
-                    <p class="subtitle is-6">${person.team}</p>
-                </div>
-            </div>
-        </article>
-    </div>
+        </div>
+    </section>
 </template>
