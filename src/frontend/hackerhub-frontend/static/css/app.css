@@ -29,6 +29,10 @@
     font-style: normal;
 }
 
+html {
+    overflow: auto !important;
+}
+
 body {
     font-family: 'PT Sans';
 }
@@ -106,15 +110,20 @@ h2 {
 }
 
 #home {
-    background-color: rgb(58, 58, 61);
+    background-color: rgb(245, 75, 117);
     width: 100vw;
     height: 100vh;
     overflow: auto;
     color: white;
+    margin: 0;
+}
+
+#home.dark {
+    background-color: rgb(58, 58, 61);
 }
 
 #home .column {
-    background-color: rgb(58, 58, 61);
+    background-color: rgb(245, 75, 117);
 }
 
 #home .login {
