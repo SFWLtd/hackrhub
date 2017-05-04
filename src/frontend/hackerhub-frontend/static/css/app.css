@@ -152,6 +152,24 @@ h2 {
     background-color: white;
 }
 
+.pink-circle {
+    border-radius: 50%;
+	width: 100px;
+    height: 100px;
+    background-color: rgb(245, 75, 117);
+}
+
+.pink-circle p {
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    padding-top: 35%;
+}
+
+.pink-circle:hover {
+    cursor: pointer;
+}
+
 .white-circle:hover {
     cursor: pointer;
 }

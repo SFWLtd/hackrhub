@@ -3,7 +3,23 @@
     <hackr-nav></hackr-nav>
     <section class="section">
         <div class="container">
-            Nothing here :)
+            <div if.bind="votingForTeamId === 0">
+                <h1 class="title hackr-title is-1">Choose a team to vote for</h1>
+                <div class="columns is-multiline">
+                    <div repeat.for="team of teams" class="column is-4">
+                        <a click.trigger="voteForTeam(team.Number)">
+                            <div class="pink-circle">
+                                <p>${team.Number}</p>
+                            </div>
+                        </a>
+                        <br/>
+                        <div class="hackr-team-name">${team.Name}</div>
+                    </div>
+                </div>
+            </div>
+            <div if.bind="votingForTeamId > 0">
+                <h1 class="title hackr-title is-1">Vote</h1>
+            </div>
         </div>
     </section>
 </template>
