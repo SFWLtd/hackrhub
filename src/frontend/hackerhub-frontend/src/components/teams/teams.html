@@ -1,0 +1,36 @@
+<template>
+    <require from="../hackr-nav/hackr-nav.html"></require>
+    <hackr-nav></hackr-nav>
+    <section class="section">
+        <div class="container">
+            <h1 class="title hackr-title is-1">Teams</h1>
+            <div repeat.for="team of teams">
+                <div class="hackr-team-card">
+                    <div class="columns">
+                        <div class="column">
+                            <div class="hackr-team-name">${team.name}</div>
+                            <div class="hackr-team-location">We travelled from ${team.location}.</div>
+                            <div class="hackr-team-description">${team.description}</div>
+                        </div>
+                        <div class="column">                            
+                            <div repeat.for="person of team.people" class="box">
+                                <article class="media">
+                                    <div class="media-left">
+                                        <figure class="image is-64x64">
+                                            <img src="${person.img}">
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <div class="content">
+                                            <p class="title is-4">${person.name}</p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
