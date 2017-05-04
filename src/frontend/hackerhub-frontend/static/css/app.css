@@ -100,6 +100,11 @@ h2 {
     margin-bottom: 10px;
 }
 
+.hackr-team-project-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
 .hackr-team-project-description {
     font-size: 18px;
 }
@@ -195,4 +200,7 @@ h2 {
     color: white !important;
     margin-bottom: 0 !important;
     margin-top: 7px;
+}
+.login-details-card {
+    padding-top: 4px;
 }
