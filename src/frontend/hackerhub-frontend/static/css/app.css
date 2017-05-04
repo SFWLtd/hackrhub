@@ -89,6 +89,10 @@ body {
     background-color: white;
 }
 
+.white-circle:hover {
+    cursor: pointer;
+}
+
 .white-circle i {
     margin-top: 38%;
     color: black;
