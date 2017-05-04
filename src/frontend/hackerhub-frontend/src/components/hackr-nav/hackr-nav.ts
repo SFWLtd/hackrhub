@@ -5,7 +5,14 @@ export class HackrNav {
     if (localStorage['name']) {
       this.name = localStorage['name'];
     } else {
-      this.name = 'Guest';
+      this.name = 'you faceless entity';
     }
+  }
+
+  logOut() {
+    localStorage.removeItem('name');
+    localStorage.removeItem('faceid');
+
+    window.location.href=('/');
   }
 }

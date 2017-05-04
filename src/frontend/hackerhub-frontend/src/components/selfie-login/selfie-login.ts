@@ -50,8 +50,12 @@ export class SelfieLogin {
       }).then(function (response) {
           response.json().then(function(data) {
               try {
-                localStorage['name'] = data.Name;
-                localStorage['faceid'] = data.FaceId;
+                if (data.Name) {
+                  localStorage['name'] = data.Name;
+                }
+                if (data.FaceId) {
+                  localStorage['faceid'] = data.FaceId;
+                }         
 
                 window.location.href='/teams';
               } catch (e) {
