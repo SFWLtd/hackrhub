@@ -101,3 +101,7 @@ body {
 .image img {
     border-radius: 50px
 }
+
+.hidden {
+    display: none;
+}
