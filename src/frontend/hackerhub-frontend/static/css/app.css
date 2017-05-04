@@ -112,7 +112,12 @@ h2 {
     background-color: rgb(58, 58, 61);
     width: 100vw;
     height: 100vh;
+    overflow: auto;
     color: white;
+}
+
+#home .column {
+    background-color: rgb(58, 58, 61);
 }
 
 #home .login {

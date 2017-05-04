@@ -8,6 +8,9 @@ export class Teams {
         mode: 'cors'
       }).then(function (response) {
           response.json().then(function(data) {
+              data = data.filter(function(team) {
+                  return team.Name !== "Observers";
+              })
               stupidHack.teams = data;
           });
       });
