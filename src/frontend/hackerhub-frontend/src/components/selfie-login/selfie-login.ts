@@ -26,19 +26,37 @@ export class SelfieLogin {
     var data = this.canvas.toDataURL("image/png");
     this.message = data;
 
-    this.apiPost('http://civica-hackathon-api.azurewebsites.net/api/detect', data, function(response) {
-      alert(response);
+    this.postAsBlob(data);
+  }
+
+  postAsBlob(data) {
+    fetch(data)
+      .then(res => res.blob())
+      .then(blob => {
+        this.apiPost(blob);
     });
   }
 
-  apiPost(url, data, callback) {
-    fetch(url, {
+  postAsBase64(data) {
+    data.replace('data:image/png;base64,', '');
+    this.apiPost(data);
+  }
+
+  apiPost(data) {
+    fetch('http://civica-hackathon-api.azurewebsites.net/api/detect', {
         method: 'POST',
         body: JSON.stringify(data),
-        headers: headers,
+        headers: this.headers(),
         credentials: 'include'
       }).then(function (response) {
-          callback(response);
+          alert(response);
       });
   };
+
+  headers() {
+    return {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  }
 }
