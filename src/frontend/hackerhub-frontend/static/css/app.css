@@ -15,8 +15,61 @@ body {
     font-family: 'Brandon';
 }
 
+.nav.hackr-nav {
+    background-color: rgb(58, 58, 61);
+    color: white;
+    height: 72px;
+}
+
+.hackr-nav .nav-left {
+    overflow: hidden;
+}
+
+.hackr-nav .nav-item a, .hackr-nav a.nav-item {
+    color: #ddd;
+}
+
+.hackr-nav .nav-item a:hover, .hackr-nav a.nav-item:hover {
+    color: white;
+}
+
+.top-logo {
+    height: 72px;
+}
+
+.hackr-title {
+    font-size: 2rem;
+    font-weight: bold;
+    border-bottom: 1px solid rgb(212, 212, 212);
+}
+
+.hackr-team-name {
+    border-bottom: 5px solid rgb(245, 75, 117);
+    display: inline-block;
+    font-size: 30px;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+
+.hackr-team-location {
+    color: #606060;
+    margin-bottom: 10px;
+}
+
+.hackr-team-description {
+    font-size: 18px;
+}
+
+.hackr-team-card {
+    margin: 50px 0;
+}
+
 #home {
     background-color: rgb(58, 58, 61);
     width: 100vw;
     height: 100vw;
+}
+
+.image img {
+    border-radius: 50px
 }
