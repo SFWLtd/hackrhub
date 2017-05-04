@@ -19,11 +19,20 @@ namespace HackRHub.Controllers
             var queryOptions = new FeedOptions { MaxItemCount = -1 };
             var client = new DocumentClient(new Uri(dbEndpoint), dbKey);
 
-            var query = client.CreateDocumentQuery<Team>(UriFactory.CreateDocumentCollectionUri("ToDoList", "Items"),
+            var teams = client.CreateDocumentQuery<Team>(UriFactory.CreateDocumentCollectionUri("ToDoList", "Items"),
                 "SELECT * FROM root r WHERE r.entityType = 'team'",
-                queryOptions);
+                queryOptions).ToList();
 
-            return query.ToList();
+            var people = client.CreateDocumentQuery<Person>(UriFactory.CreateDocumentCollectionUri("ToDoList", "Items"),
+                $"SELECT * FROM  root r WHERE r.entityType = 'user'",
+                queryOptions).ToList();
+
+            foreach (var team in teams)
+            {
+                team.People = people.Where(p => p.TeamId == team.Id).ToList();
+            }
+
+            return teams;
         }
     }
 }
