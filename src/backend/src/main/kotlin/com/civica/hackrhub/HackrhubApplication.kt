@@ -74,3 +74,9 @@ class HackrhubApplication: Application<HackrhubConfig>() {
 class HackrhubConfig : Configuration() {
 
 }
+
+fun main(args: Array<String>) {
+    HackrhubApplication().run(*args)
+}
+
+

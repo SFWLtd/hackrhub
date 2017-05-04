@@ -1,0 +1,18 @@
+<template>
+    <div repeat.for="person of people" class="box">
+
+        <article class="media">
+            <div class="media-left">
+                <figure class="image is-64x64">
+                    <img src="${person.img}">
+                </figure>
+            </div>
+            <div class="media-content">
+                <div class="content">
+                    <p class="title is-4">${person.name}</p>
+                    <p class="subtitle is-6">@whatever</p>
+                </div>
+            </div>
+        </article>
+    </div>
+</template>

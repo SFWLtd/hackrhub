@@ -1,3 +1,23 @@
 <template>
-  <router-view></router-view>
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item">
+          Logo
+        </a>
+      </div>
+      <div class="nav-right nav-menu">
+        <a route-href="route: home" class="nav-item">
+          Home
+        </a>
+        <a route-href="route: people" class="nav-item">
+          People
+        </a>
+        <a route-href="route: ideas" class="nav-item">
+          Ideas
+        </a>
+      </div>
+    </nav>
+    <router-view></router-view>
+  </div>
 </template>
