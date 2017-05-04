@@ -1,0 +1,30 @@
+<template>
+    <require from="../hackr-nav/hackr-nav"></require>
+    <hackr-nav></hackr-nav>
+    <section class="section">
+        <div class="container">
+            <h1 class="title hackr-title is-1">Results</h1>
+            <div class="columns is-multiline">
+                <div repeat.for="result of results" class="column is-4">
+                    <article class="media person-card">
+                        <div class="media-content">
+                            <div class="content">
+                                <p class="title is-4 person-name">${result.Team}</p>
+                                <div if.bind="result.TotalScore ==='NaN'">
+                                    <div>Results not in</div>
+                                </div>
+                                <div if.bind="result.TotalScore !=='NaN'">
+                                    <div class="total-score">Total score ${result.TotalScore}</div>
+                                    <div class="single-score">${result.ConceptScore} in Concept</div>
+                                    <div class="single-score">${result.ImplementationScore} in Implemenation</div>
+                                    <div class="single-score">${result.TechnicalNoveltyScore} in Technical Novelty</div>
+                                    <div class="single-score">${result.PresentationScore} in Presentation</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>

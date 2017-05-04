@@ -230,3 +230,8 @@ h2 {
 .person-job-title {
     margin-top: -1rem !important;
 }
+
+.total-score {
+    font-size: 20px;
+    font-weight: bold;
+}
