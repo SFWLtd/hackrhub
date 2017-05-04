@@ -11,4 +11,12 @@ export class IdeaGenerator {
   item5 = this.array5[Math.floor(Math.random() * this.array5.length)];
   constructor() {
    }
+
+   refresh() {
+    this.item1 = this.array1[Math.floor(Math.random() * this.array1.length)]; 
+    this.item2 = this.array2[Math.floor(Math.random() * this.array2.length)];
+    this.item3 = this.array3[Math.floor(Math.random() * this.array3.length)];
+    this.item4 = this.array4[Math.floor(Math.random() * this.array4.length)];
+    this.item5 = this.array5[Math.floor(Math.random() * this.array5.length)];
+   }
 }
