@@ -6,7 +6,6 @@ export class Home {
   canvas: any;
   
   constructor() {
-      
   }
 
   attached() {
