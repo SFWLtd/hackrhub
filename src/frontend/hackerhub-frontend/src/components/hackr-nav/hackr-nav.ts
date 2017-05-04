@@ -1,9 +1,11 @@
 export class HackrNav {
   name: string
+  personid: string;
 
   constructor() {
     if (localStorage['name']) {
       this.name = localStorage['name'];
+      this.personid = localStorage['personid'];
     } else {
       this.name = 'you faceless entity';
     }
@@ -11,8 +13,8 @@ export class HackrNav {
 
   logOut() {
     localStorage.removeItem('name');
-    localStorage.removeItem('faceid');
+    localStorage.removeItem('personid');
 
     window.location.href=('/');
   }
-}
+};
