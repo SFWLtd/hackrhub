@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.civica.hackrhub.iml" filepath="$PROJECT_DIR$/.idea/modules/com.civica.hackrhub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.civica.hackrhub_main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.civica.hackrhub_main.iml" group="com.civica.hackrhub" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.civica.hackrhub_test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.civica.hackrhub_test.iml" group="com.civica.hackrhub" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/hackrhub.iml" filepath="$PROJECT_DIR$/.idea/modules/hackrhub.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/hackrhub_main.iml" filepath="$PROJECT_DIR$/.idea/modules/hackrhub_main.iml" group="hackrhub" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/hackrhub_test.iml" filepath="$PROJECT_DIR$/.idea/modules/hackrhub_test.iml" group="hackrhub" />
