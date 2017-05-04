@@ -169,3 +169,16 @@ h2 {
     font-weight: 600;
     display: inline-block;
 }
+
+.video-wrapper {
+    padding-top: 20vh;
+}
+
+.center-div {
+    width: 50%;
+    margin: auto;
+}
+
+.center-div {
+    text-align: center
+}
