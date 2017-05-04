@@ -8,13 +8,14 @@
                 <div class="hackr-team-card">
                     <div class="columns">
                         <div class="column is-half">
-                            <div class="hackr-team-name">${team.name}</div>
-                            <div class="hackr-team-location">We travelled from ${team.location}.</div>
-                            <div class="hackr-team-description">${team.description}</div>
+                            <div class="hackr-team-name">${team.Name}</div>
+                            <div class="hackr-team-location">We travelled from ${team.Location}.</div>
+                            <div class="hackr-team-project-name">${team.ProjectName}</div>
+                            <div class="hackr-team-project-description">${team.ProjectDescription}</div>
                         </div>
                         <div class="column is-half">
                             <div class="columns is-multiline">
-                                <div repeat.for="person of team.people" class="column is-half">
+                                <div repeat.for="person of team.People" class="column is-half">
                                         <article class="media">
                                             <div class="media-left">
                                                 <figure class="image is-64x64">
@@ -23,8 +24,8 @@
                                             </div>
                                             <div class="media-content">
                                                 <div class="content">
-                                                    <p class="title is-4">${person.name}</p>
-                                                    <p class="subtitle is-6">Job title</p>
+                                                    <p class="title is-4">${person.Name}</p>
+                                                    <p class="subtitle is-6">${person.Title}</p>
                                                 </div>
                                             </div>
                                         </article>
