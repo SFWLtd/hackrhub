@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.ModelBinding;
 
 namespace HackRHub.Controllers
 {
@@ -17,9 +18,11 @@ namespace HackRHub.Controllers
         static string personGroupId = "civicans";
 
         [Route("api/detect")]
-        public async Task<string> Detect([FromBody]byte[] image)
+        public async Task<string> Detect([FromBody]string base64Image)
         {
             var faceServiceClient = new FaceServiceClient(apiKey, "https://westeurope.api.cognitive.microsoft.com/face/v1.0");
+
+            byte[] image = Convert.FromBase64String(base64Image);
 
             try
             {
