@@ -19,6 +19,7 @@ namespace HackRHub.Controllers
         static string personGroupId = "civicans";
 
         [Route("api/detect")]
+        [HttpPost]
         public async Task<Person> Detect([FromBody]string base64Image)
         {
             var faceServiceClient = new FaceServiceClient(apiKey, "https://westeurope.api.cognitive.microsoft.com/face/v1.0");
