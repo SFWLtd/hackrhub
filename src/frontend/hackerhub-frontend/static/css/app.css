@@ -50,6 +50,10 @@ h2 {
     font-size: 24px;
 }
 
+h2.vote-result-title {
+    font-size: 32px;
+}
+
 .nav.hackr-nav {
     background-color: rgb(58, 58, 61);
     color: white;
