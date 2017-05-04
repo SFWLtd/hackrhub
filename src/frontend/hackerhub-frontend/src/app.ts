@@ -18,7 +18,9 @@ export class App {
           { route: 'vote',  name: 'vote', nav: true,
             moduleId: './components/vote/vote', title:'Vote' },
           { route: 'photos',  name: 'photos', nav: true,
-            moduleId: './components/photos/photos', title:'#civicadigihack17' }
+            moduleId: './components/photos/photos', title:'#civicadigihack17' },
+          { route: 'results',  name: 'results', nav: true,
+            moduleId: './components/vote-results/vote-results', title:'Results' }
       ]);
    }
 }

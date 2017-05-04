@@ -231,3 +231,25 @@ h2 {
 .login-details-card {
     padding-top: 4px;
 }
+
+.person-card {
+    margin-bottom: 10px;
+}
+
+.person-name {
+    border-bottom: 5px solid rgb(245, 75, 117);
+    display: inline-block;
+    font-size: 30px;
+    line-height: 30px;
+    font-family: 'Typewriter';
+    font-weight: 600 !important;
+}
+
+.person-job-title {
+    margin-top: -1rem !important;
+}
+
+.total-score {
+    font-size: 20px;
+    font-weight: bold;
+}
