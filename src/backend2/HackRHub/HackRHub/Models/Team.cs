@@ -8,6 +8,12 @@ namespace HackRHub.Models
 
         public string Name { get; set; }
 
+        public string Location { get; set; }
+
+        public string ProjectName { get; set; }
+
+        public string ProjectDescription { get; set; }
+
         public IEnumerable<Person> People { get; set; }
     }
 }
