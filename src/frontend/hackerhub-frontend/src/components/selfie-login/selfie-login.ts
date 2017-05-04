@@ -4,6 +4,7 @@ export class SelfieLogin {
   video: any;
   canvas: any;
   imageUrl: string;
+  message: string;
   
   constructor() {
   }
@@ -48,8 +49,14 @@ export class SelfieLogin {
         mode: 'cors'
       }).then(function (response) {
           response.json().then(function(data) {
-              localStorage['name'] = data.Name;
-              localStorage['faceid'] = data.FaceId;
+              try {
+                localStorage['name'] = data.Name;
+                localStorage['faceid'] = data.FaceId;
+
+                window.location.href='/teams';
+              } catch (e) {
+                this.message = 'Could not log in :(';
+              }
           });
       });
   };
