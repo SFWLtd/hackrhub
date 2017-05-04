@@ -1,4 +1,7 @@
 <template>
   <video ref="video" width="320" height="240" preload autoplay loop muted></video>
   <canvas ref="canvas" width="320" height="240"></canvas>
+  <button click.trigger="takePhoto()">Snap</button>
+
+  Generated image: ${imageUrl}
 </template>
