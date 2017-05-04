@@ -7,25 +7,28 @@
             <div repeat.for="team of teams">
                 <div class="hackr-team-card">
                     <div class="columns">
-                        <div class="column">
+                        <div class="column is-half">
                             <div class="hackr-team-name">${team.name}</div>
                             <div class="hackr-team-location">We travelled from ${team.location}.</div>
                             <div class="hackr-team-description">${team.description}</div>
                         </div>
-                        <div class="column">                            
-                            <div repeat.for="person of team.people" class="box">
-                                <article class="media">
-                                    <div class="media-left">
-                                        <figure class="image is-64x64">
-                                            <img src="${person.img}">
-                                        </figure>
-                                    </div>
-                                    <div class="media-content">
-                                        <div class="content">
-                                            <p class="title is-4">${person.name}</p>
-                                        </div>
-                                    </div>
-                                </article>
+                        <div class="column is-half">
+                            <div class="columns is-multiline">
+                                <div repeat.for="person of team.people" class="column is-half">
+                                        <article class="media">
+                                            <div class="media-left">
+                                                <figure class="image is-64x64">
+                                                    <img src="${person.img}">
+                                                </figure>
+                                            </div>
+                                            <div class="media-content">
+                                                <div class="content">
+                                                    <p class="title is-4">${person.name}</p>
+                                                    <p class="subtitle is-6">Job title</p>
+                                                </div>
+                                            </div>
+                                        </article>
+                                </div>
                             </div>
                         </div>
                     </div>

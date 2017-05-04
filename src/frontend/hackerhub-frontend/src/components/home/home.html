@@ -1,13 +1,6 @@
-<template>
-  <require from="./selfie-login.html"></require>
-  
-  <div if.bind="loginType === 'None'"> 
+<template>  
+  <div id="home">
     Hello!
-    <button click.trigger="showSelfieLogin()" class="button is-primary">Login with selfie</button>
-    <button click.trigger="showGuestLogin()" class="button is-info">Login as guest</button>
+    <a route-href="route: selfie-login" class="button is-primary">
   </div>
-  <div if.bind="loginType === 'Selfie'">
-    <selfie-login></selfie-login>
-  </div>
-
 </template>

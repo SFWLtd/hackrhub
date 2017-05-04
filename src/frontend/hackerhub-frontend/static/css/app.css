@@ -63,3 +63,13 @@ body {
 .hackr-team-card {
     margin: 50px 0;
 }
+
+#home {
+    background-color: rgb(58, 58, 61);
+    width: 100vw;
+    height: 100vw;
+}
+
+.image img {
+    border-radius: 50px
+}
