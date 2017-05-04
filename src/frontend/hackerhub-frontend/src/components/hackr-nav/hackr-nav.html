@@ -1,22 +1,33 @@
 <template>
-<nav class="nav has-shadow">
+  <nav class="nav hackr-nav">
     <div class="container">
-        <div class="nav-left">
-            <a class="nav-item">
-          Logo
+      <div class="nav-left">
+        <a>
+          <img src="static/img/top-logo.png" class="top-logo">
         </a>
-        </div>
-        <div class="nav-right nav-menu">
-            <a route-href="route: home" class="nav-item">
-          Home
+      </div>
+      <div class="nav-center nav-menu">
+        <a route-href="route: teams" class="nav-item">
+          Teams
         </a>
-            <a route-href="route: people" class="nav-item">
-          People
+        <a route-href="route: hackrs" class="nav-item">
+          Hackrs
         </a>
-            <a route-href="route: ideas" class="nav-item">
+        <a route-href="route: photos" class="nav-item">
+          #civicadigihack17
+        </a>
+        <a route-href="route: vote" class="nav-item">
+          Vote
+        </a>
+        <a route-href="route: ideas" class="nav-item">
           Ideas
         </a>
-        </div>
+      </div>
+      <div class="nav-right">
+        <a class="nav-item">
+          Welcome ${name}
+        </a>
+      </div>
     </div>
-</nav>
+  </nav>
 </template>
