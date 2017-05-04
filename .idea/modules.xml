@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hackrhub.iml" filepath="$PROJECT_DIR$/.idea/modules/hackrhub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hackrhub_main.iml" filepath="$PROJECT_DIR$/.idea/modules/hackrhub_main.iml" group="hackrhub" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hackrhub_test.iml" filepath="$PROJECT_DIR$/.idea/modules/hackrhub_test.iml" group="hackrhub" />
+    </modules>
+  </component>
+</project>
