@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Brandon';
+    src: url('../fonts/BrandonText-Light.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Brandon';
+    src: url('../fonts/BrandonText-Bold.otf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Brandon';
+}
