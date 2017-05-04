@@ -44,5 +44,19 @@ namespace HackRHub.Controllers
 
             return query.ToList();
         }
+
+        [HttpGet]
+        [Route("api/teamvotes/{teamId}")]
+        public IEnumerable<Vote> Get(string teamId)
+        {
+            var queryOptions = new FeedOptions { MaxItemCount = -1 };
+            var client = new DocumentClient(new Uri(dbEndpoint), dbKey);
+
+            var query = client.CreateDocumentQuery<Vote>(UriFactory.CreateDocumentCollectionUri("ToDoList", "Votes"),
+                queryOptions)
+                .Where(v => v.VoterTeamId == teamId);
+
+            return query.ToList();
+        }
     }
 }
