@@ -47,8 +47,8 @@ export class SelfieLogin {
                   hack.message = hack.errorMessage();
                   return;
                 }
-                if (data.FaceId) {
-                  localStorage['faceid'] = data.FaceId;
+                if (data.PersonId) {
+                  localStorage['personid'] = data.PersonId;
                 }
 
                 window.location.href='/teams';

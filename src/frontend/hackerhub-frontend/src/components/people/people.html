@@ -4,20 +4,24 @@
     <section class="section">
         <div class="container">
             <h1 class="title hackr-title is-1">Hackrs</h1>
-            <div repeat.for="person of people" class="box">
-                <article class="media">
-                    <div class="media-left">
-                        <figure class="image is-64x64">
-                            <img src="static/img/mg.jpg">
-                        </figure>
-                    </div>
-                    <div class="media-content">
-                        <div class="content">
-                            <p class="title is-4">${person.Name}</p>
-                            <p class="subtitle is-6">${person.Title}</p>
+            
+            <div class="columns is-multiline">
+                <div repeat.for="person of people" class="column is-3">
+                    <article class="media person-card">
+                        <div class="media-left">
+                            <figure class="image is-64x64">
+                                <img src="static/img/${person.PersonId}.jpg">
+                            </figure>
                         </div>
-                    </div>
-                </article>
+                        <br>
+                        <div class="media-content">
+                            <div class="content">
+                                <p class="title is-4 person-name">${person.Name}</p>
+                                <p class="subtitle is-6 person-job-title">${person.Title}</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
         </div>
     </section>

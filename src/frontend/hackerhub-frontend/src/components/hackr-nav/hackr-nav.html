@@ -24,12 +24,21 @@
         </a>
       </div>
       <div class="nav-right">
-        <a class="nav-item">
-          Welcome ${name}
-        </a>
-        <a class="nav-item logout" click.trigger="logOut()">
-          Logout
-        </a>
+          <article class="media login-details-card">
+            <div if.bind="hasFace" class="media-left">
+                <figure class="image is-64x64">
+                    <img src="static/img/${personid}.jpg">
+                </figure>
+            </div>
+            <div class="media-content">
+                <div class="content">
+                    <p class="title is-4 nav-title">${name}</p>
+                    <a class="nav-item subtitle is-6 logout" click.trigger="logOut()">
+                      Logout
+                    </a>
+                </div>
+            </div>
+        </article>
       </div>
     </div>
   </nav>
