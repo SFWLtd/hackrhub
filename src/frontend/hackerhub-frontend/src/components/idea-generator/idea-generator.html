@@ -4,10 +4,15 @@
   <section class="section">
     <div class="container">
       <h1 class="title hackr-title is-1">Need a hackathon idea?</h1>
-      <div class="box">
-        <h1>${item1} for ${item2}, in ${item3} on ${item4}, but ${item5}</h1>
+      <div class="hackr-idea-wrapper">
+        <div class="hackr-idea">
+          <strong>${item1}</strong> for <strong>${item2}</strong>, in <strong>${item3}</strong> on <strong>${item4}</strong>,
+          but <strong>${item5}</strong>
+        </div>
+        <br>
+        <br>
+        <button click.trigger="refresh()" class="button is-primary">Refresh</button>
       </div>
-      <button click.trigger="refresh()" class="button is-primary">Refresh</button>
     </div>
   </section>
 </template>
