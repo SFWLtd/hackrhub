@@ -1,15 +1,10 @@
 ﻿using HackRHub.Models;
 using Microsoft.ProjectOxford.Face;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
-using System.Web.Http.ModelBinding;
 
 namespace HackRHub.Controllers
 {
@@ -60,7 +55,7 @@ namespace HackRHub.Controllers
 
                             return new Person
                             {
-                                FaceId = identifyResult.FaceId.ToString(),
+                                PersonId = person.PersonId.ToString(),
                                 Name = person.Name
                             };
                         }
