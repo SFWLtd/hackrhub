@@ -8,12 +8,8 @@
                 <div class="columns is-multiline">
                     <div repeat.for="team of teams" class="column is-4">
                         <a click.trigger="voteForTeam(team.Number)">
-                            <div class="pink-circle">
-                                <p>${team.Number}</p>
-                            </div>
+                            <div class="hackr-team-name">${team.Name}</div>
                         </a>
-                        <br/>
-                        <div class="hackr-team-name">${team.Name}</div>
                     </div>
                 </div>
             </div>

@@ -161,13 +161,14 @@ h2.vote-result-title {
 	width: 100px;
     height: 100px;
     background-color: rgb(245, 75, 117);
+    margin-bottom: 20px;
 }
 
 .pink-circle p {
     text-align: center;
     color: white;
     font-size: 25px;
-    padding-top: 35%;
+    padding-top: 30%;
 }
 
 .pink-circle:hover {
@@ -256,4 +257,7 @@ h2.vote-result-title {
 .total-score {
     font-size: 20px;
     font-weight: bold;
+}
+a > .hackr-team-name {
+    color: black;
 }
