@@ -1,4 +1,5 @@
-﻿using Microsoft.ProjectOxford.Face;
+﻿using HackRHub.Models;
+using Microsoft.ProjectOxford.Face;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,6 +9,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.ModelBinding;
 
 namespace HackRHub.Controllers
 {
@@ -17,9 +19,12 @@ namespace HackRHub.Controllers
         static string personGroupId = "civicans";
 
         [Route("api/detect")]
-        public async Task<string> Detect([FromBody]byte[] image)
+        [HttpPost]
+        public async Task<Person> Detect([FromBody]string base64Image)
         {
             var faceServiceClient = new FaceServiceClient(apiKey, "https://westeurope.api.cognitive.microsoft.com/face/v1.0");
+
+            byte[] image = Convert.FromBase64String(base64Image);
 
             try
             {
@@ -30,37 +35,41 @@ namespace HackRHub.Controllers
 
                     if (!faceIds.Any())
                     {
-                        return "No faces found";
+                        throw new InvalidOperationException("No faces detected");
                     }
                     else
                     {
                         var results = await faceServiceClient.IdentifyAsync(personGroupId, faceIds);
-                        var sb = new StringBuilder();
-
-                        foreach (var identifyResult in results)
+                        
+                        if (results.Length > 1)
                         {
-                            if (identifyResult.Candidates.Length == 0)
-                            {
-                                Console.WriteLine("No one identified");
-                            }
-                            else
-                            {
-                                sb.AppendFormat("Result of face: {0}", identifyResult.FaceId);
-                                // Get top 1 among all candidates returned
-                                var candidateId = identifyResult.Candidates[0].PersonId;
-                                var person = await faceServiceClient.GetPersonAsync(personGroupId, candidateId);
-                                sb.AppendFormat("Identified as {0}", person.Name);
-                                sb.AppendLine();
-                            }
+                            throw new InvalidOperationException("Multiple faces detected");
                         }
 
-                        return sb.ToString();
+                        var identifyResult = results.Single();
+                        
+                        if (identifyResult.Candidates.Length == 0)
+                        {
+                            throw new InvalidOperationException("No faces identified");
+                        }
+                        else
+                        {
+                            // Get top 1 among all candidates returned
+                            var candidateId = identifyResult.Candidates[0].PersonId;
+                            var person = await faceServiceClient.GetPersonAsync(personGroupId, candidateId);
+
+                            return new Person
+                            {
+                                FaceId = identifyResult.FaceId.ToString(),
+                                Name = person.Name
+                            };
+                        }
                     }
                 }
             }
             catch (FaceAPIException ex)
             {
-                return ex.ErrorMessage;
+                throw;
             }
         }
     }

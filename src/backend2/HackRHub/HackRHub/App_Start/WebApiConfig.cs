@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Web.Http;
+﻿using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace HackRHub
 {
@@ -22,6 +19,10 @@ namespace HackRHub
             );
 
             config.Formatters.Add(new BinaryMediaTypeFormatter());
+            config.Formatters.Add(new TextMediaTypeFormatter());
+
+            var cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
         }
     }
 }
