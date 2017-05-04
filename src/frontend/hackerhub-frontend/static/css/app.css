@@ -14,3 +14,9 @@
 body {
     font-family: 'Brandon';
 }
+
+#home {
+    background-color: rgb(58, 58, 61);
+    width: 100vw;
+    height: 100vw;
+}
