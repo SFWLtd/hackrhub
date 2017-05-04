@@ -1,7 +1,6 @@
 import {tracking} from 'tracking';
 
 export class SelfieLogin {  
-  message: string;
   video: any;
   canvas: any;
   imageUrl: string;
@@ -24,9 +23,9 @@ export class SelfieLogin {
     var context = this.canvas.getContext('2d');
     context.drawImage(this.video, 0, 0, 220, 150);
     var data = this.canvas.toDataURL("image/png");
-    this.message = data;
+    data = data.replace('data:image/png;base64,', '');
 
-    this.postAsBlob(data);
+    this.postAsBase64(data);
   }
 
   postAsBlob(data) {
@@ -38,7 +37,6 @@ export class SelfieLogin {
   }
 
   postAsBase64(data) {
-    data.replace('data:image/png;base64,', '');
     this.apiPost(data);
   }
 
@@ -47,9 +45,12 @@ export class SelfieLogin {
         method: 'POST',
         body: JSON.stringify(data),
         headers: this.headers(),
-        credentials: 'include'
+        mode: 'cors'
       }).then(function (response) {
-          alert(response);
+          response.json().then(function(data) {
+              localStorage['name'] = data.Name;
+              localStorage['faceid'] = data.FaceId;
+          });
       });
   };
 
