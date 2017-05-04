@@ -105,3 +105,16 @@ body {
 .hidden {
     display: none;
 }
+
+.video-wrapper {
+    padding-top: 20vh;
+}
+
+.center-div {
+    width: 50%;
+    margin: auto;
+}
+
+.center-div {
+    text-align: center
+}
