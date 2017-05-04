@@ -33,7 +33,7 @@ export class SelfieLogin {
 
     var hack = this;
 
-    fetch('http://civica-hackathon-api.azurewebsites.net/api/detect', {
+    fetch('https://civica-hackathon-api.azurewebsites.net/api/detect', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: this.headers(),

@@ -3,7 +3,7 @@ export class Teams {
   
   constructor() {
     let stupidHack = this;
-    fetch('http://civica-hackathon-api.azurewebsites.net/api/teams', {
+    fetch('https://civica-hackathon-api.azurewebsites.net/api/teams', {
         method: 'GET',
         mode: 'cors'
       }).then(function (response) {
