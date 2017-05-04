@@ -18,5 +18,29 @@ body {
 #home {
     background-color: rgb(58, 58, 61);
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
+    color: white;
+}
+
+#home .login {
+    margin-top: 30vh;
+    text-align: center;
+}
+
+.white-circle-container {
+    width: 200px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+.white-circle {
+	border-radius: 50%;
+	width: 200px;
+    height: 200px;
+    background-color: white;
+}
+
+.white-circle i {
+    margin-top: 38%;
+    color: black;
 }
