@@ -1,5 +1,4 @@
 export class Teams {
-
     teams = [
         {
             name: "Left4Dev",

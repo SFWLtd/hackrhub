@@ -73,3 +73,7 @@ body {
 .image img {
     border-radius: 50px
 }
+
+.button.is-primary {
+    background-color: rgb(245, 75, 117) !important;
+}
