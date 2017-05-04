@@ -26,22 +26,13 @@ export class SelfieLogin {
     var data = this.canvas.toDataURL("image/png");
     data = data.replace('data:image/png;base64,', '');
 
-    this.postAsBase64(data);
-  }
-
-  postAsBlob(data) {
-    fetch(data)
-      .then(res => res.blob())
-      .then(blob => {
-        this.apiPost(blob);
-    });
-  }
-
-  postAsBase64(data) {
     this.apiPost(data);
   }
 
   apiPost(data) {
+
+    var hack = this;
+
     fetch('http://civica-hackathon-api.azurewebsites.net/api/detect', {
         method: 'POST',
         body: JSON.stringify(data),
@@ -52,16 +43,22 @@ export class SelfieLogin {
               try {
                 if (data.Name) {
                   localStorage['name'] = data.Name;
+                } else {
+                  hack.message = hack.errorMessage();
+                  return;
                 }
                 if (data.FaceId) {
                   localStorage['faceid'] = data.FaceId;
-                }         
+                }
 
                 window.location.href='/teams';
+
               } catch (e) {
-                this.message = 'Could not log in :(';
+                hack.message = hack.errorMessage();
               }
           });
+      }).catch(function(err) {
+          hack.message = hack.errorMessage();
       });
   };
 
@@ -70,5 +67,9 @@ export class SelfieLogin {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     }
+  }
+
+  errorMessage() {
+    return 'Could not log in :(. Please try again';
   }
 }
