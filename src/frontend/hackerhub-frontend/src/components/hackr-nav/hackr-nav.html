@@ -6,42 +6,69 @@
           <img src="static/img/top-logo.png" class="top-logo">
         </a>
       </div>
+
+      <span class="nav-toggle" click.trigger="toggleMobileMenu()">
+        <span></span>
+      <span></span>
+      <span></span>
+      </span>
+
       <div class="nav-center nav-menu">
-        <a route-href="route: teams" class="nav-item">
+        <a route-href="route: teams" class="nav-item is-tab is-hidden-mobile">
           Teams
         </a>
-        <a route-href="route: hackrs" class="nav-item">
+        <a route-href="route: hackrs" class="nav-item is-tab is-hidden-mobile">
           Hackrs
         </a>
-        <a route-href="route: photos" class="nav-item">
+        <a route-href="route: photos" class="nav-item is-tab is-hidden-mobile">
           #civicadigihack17
         </a>
-        <a route-href="route: vote" class="nav-item">
+        <a route-href="route: vote" class="nav-item is-tab is-hidden-mobile">
           Vote
         </a>
-        <a route-href="route: results" class="nav-item">
+        <a route-href="route: results" class="nav-item is-tab is-hidden-mobile">
           Results
         </a>
-        <a route-href="route: ideas" class="nav-item">
+        <a route-href="route: ideas" class="nav-item is-tab is-hidden-mobile">
           Ideas
         </a>
       </div>
-      <div class="nav-right">
+      <div class="nav-right nav-menu ${mobileMenuVisible ? 'is-active' : ''}">
+        <a route-href="route: teams" class="nav-item is-tab is-hidden-tablet">
+            Teams
+          </a>
+        <a route-href="route: hackrs" class="nav-item is-tab is-hidden-tablet">
+            Hackrs
+          </a>
+        <a route-href="route: photos" class="nav-item is-tab is-hidden-tablet">
+            #civicadigihack17
+          </a>
+        <a route-href="route: vote" class="nav-item is-tab is-hidden-tablet">
+            Vote
+          </a>
+        <a route-href="route: results" class="nav-item is-tab is-hidden-tablet">
+            Results
+          </a>
+        <a route-href="route: ideas" class="nav-item is-tab is-hidden-tablet">
+            Ideas
+          </a>
+        <div class="nav-item is-tab">
           <article class="media login-details-card">
             <div if.bind="hasFace" class="media-left">
-                <figure class="image is-64x64">
-                    <img src="static/img/${personid}.jpg">
-                </figure>
+              <figure class="image is-64x64">
+                <img src="static/img/${personid}.jpg">
+              </figure>
             </div>
             <div class="media-content">
-                <div class="content">
-                    <p class="title is-4 nav-title">${name}</p>
-                    <a class="nav-item subtitle is-6 logout" click.trigger="logOut()">
+              <div class="content">
+                <p class="title is-4 nav-title">${name}</p>
+                <a class="nav-item subtitle is-6 logout" click.trigger="logOut()">
                       Logout
                     </a>
-                </div>
+              </div>
             </div>
-        </article>
+          </article>
+        </div>
       </div>
     </div>
   </nav>

@@ -128,10 +128,13 @@ h2.vote-result-title {
     overflow: auto;
     color: white;
     margin: 0;
+    text-align: center;
+    padding: 20vh 0 0 0;
 }
 
 #home.dark {
     background-color: rgb(58, 58, 61);
+    padding: 0;
 }
 
 #home .column {
@@ -144,15 +147,15 @@ h2.vote-result-title {
 }
 
 .white-circle-container {
-    width: 200px;
     margin: 0 auto;
     padding-bottom: 10px;
 }
 
 .white-circle {
 	border-radius: 50%;
-	width: 200px;
-    height: 200px;
+	width: 20vh;
+    height: 20vh;
+    line-height: 20vh;
     background-color: white;
 }
 
@@ -180,7 +183,7 @@ h2.vote-result-title {
 }
 
 .white-circle i {
-    margin-top: 38%;
+    vertical-align: middle;
     color: black;
 }
 
@@ -216,25 +219,19 @@ h2.vote-result-title {
 }
 
 .video-wrapper {
-    padding-top: 20vh;
+    padding-top: 50px;
 }
 
 .center-div {
+    text-align: center;
     width: 50%;
     margin: auto;
-}
-
-.center-div {
-    text-align: center
 }
 
 .nav-title {
     color: white !important;
     margin-bottom: 0 !important;
     margin-top: 7px;
-}
-.login-details-card {
-    padding-top: 4px;
 }
 
 .person-card {
@@ -260,4 +257,28 @@ h2.vote-result-title {
 }
 a > .hackr-team-name {
     color: black;
+}
+
+.nav-toggle {
+    margin: 10px;
+    background-color: white;
+}
+
+.nav-menu.nav-right {
+    background-color: rgb(58, 58, 61) !important;
+}
+
+.nav-item img {
+    max-height: 100% !important;
+}
+
+.white-circle-wrapper {
+    display: inline-block;
+    text-align: center;
+    margin: 30px;
+}
+
+.selfie-video {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }

@@ -5,6 +5,8 @@ export class SelfieLogin {
   canvas: any;
   imageUrl: string;
   message: string;
+  debug: string;
+  debug2: string;
   
   constructor() {
   }
@@ -22,10 +24,12 @@ export class SelfieLogin {
 
   takePhoto() {
     var context = this.canvas.getContext('2d');
-    context.drawImage(this.video, 0, 0, 220, 150);
+    this.canvas.width = this.video.clientWidth;
+    this.canvas.height = this.video.clientHeight;
+    context.drawImage(this.video, 0, 0, this.video.clientWidth, this.video.clientHeight);
     var data = this.canvas.toDataURL("image/png");
     data = data.replace('data:image/png;base64,', '');
-
+    this.debug = data;
     this.apiPost(data);
   }
 
@@ -41,6 +45,7 @@ export class SelfieLogin {
       }).then(function (response) {
           response.json().then(function(data) {
               try {
+                hack.debug2 = JSON.stringify(data);
                 if (data.Name) {
                   localStorage['name'] = data.Name;
                 } else {

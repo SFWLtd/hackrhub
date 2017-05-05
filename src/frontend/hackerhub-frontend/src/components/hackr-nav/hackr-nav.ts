@@ -2,6 +2,7 @@ export class HackrNav {
   name: string
   personid: string;
   hasFace: boolean;
+  mobileMenuVisible: boolean = false;
 
   constructor() {
 
@@ -21,5 +22,9 @@ export class HackrNav {
     localStorage.removeItem('personid');
 
     window.location.href=('/');
+  }
+
+  toggleMobileMenu() {
+    this.mobileMenuVisible = !this.mobileMenuVisible;
   }
 };
