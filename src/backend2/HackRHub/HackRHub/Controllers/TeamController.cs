@@ -24,7 +24,7 @@ namespace HackRHub.Controllers
                 queryOptions).ToList();
 
             var people = client.CreateDocumentQuery<Person>(UriFactory.CreateDocumentCollectionUri("ToDoList", "Items"),
-                $"SELECT * FROM  root r WHERE r.entityType = 'user'",
+                "SELECT * FROM  root r WHERE r.entityType = 'user'",
                 queryOptions).ToList();
 
             foreach (var team in teams)
