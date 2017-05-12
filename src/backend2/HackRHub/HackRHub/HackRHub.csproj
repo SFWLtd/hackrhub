@@ -142,10 +142,12 @@
     <Compile Include="Controllers\PeopleController.cs" />
     <Compile Include="Controllers\ResultsController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
+    <Compile Include="Controllers\TwitterController.cs" />
     <Compile Include="Controllers\VoteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\OAuthTokenResponse.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Result.cs" />
     <Compile Include="Models\Team.cs" />
