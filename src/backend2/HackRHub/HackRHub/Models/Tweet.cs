@@ -1,4 +1,6 @@
-﻿namespace HackRHub.Models
+﻿using System;
+
+namespace HackRHub.Models
 {
     public class Tweet
     {
@@ -8,7 +10,11 @@
 
         public string UserScreenName { get; set; }
 
+        public string UserProfileImageUrl { get; set; }
+
         public bool HasMedia { get; set; }
+
+        public DateTime CreatedAt { get; set; }
 
         public string[] MediaUrls { get; set; }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -50,7 +51,7 @@ namespace HackRHub.Controllers
 
             var getTweetsRequest = new HttpRequestMessage()
             {
-                RequestUri = new Uri("1.1/search/tweets.json?q=%23civicadigihack17&tweet_mode=extended", UriKind.Relative),
+                RequestUri = new Uri("1.1/search/tweets.json?q=%23civicadigihack17 AND -filter:retweets AND -filter:replies&tweet_mode=extended&count=100", UriKind.Relative),
                 Method = HttpMethod.Get
             };
             getTweetsRequest.Headers.Authorization = new AuthenticationHeaderValue("Bearer", oAuthTokenResponse.AccessToken);
@@ -71,6 +72,8 @@ namespace HackRHub.Controllers
                     Text = status.full_text,
                     UserName = status.user.name,
                     UserScreenName = status.user.screen_name,
+                    UserProfileImageUrl = status.user.profile_image_url,
+                    CreatedAt = DateTime.ParseExact(status.created_at.ToString(), "ddd MMM dd HH:mm:ss zzz yyyy", CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal),
                     HasMedia = status?.entities?.media?.HasValues ?? false,
                     MediaUrls = ((JArray)status?.extended_entities?.media)?.Select(x => x["media_url"].ToString()).ToArray() ?? new string[0]
                 };
