@@ -1,10 +1,14 @@
-﻿using HackRHub.Models;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
+using HackRHub.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace HackRHub.Controllers
 {
@@ -37,7 +41,7 @@ namespace HackRHub.Controllers
 
             var getTweetsRequest = new HttpRequestMessage()
             {
-                RequestUri = new Uri("1.1/search/tweets.json?q=%23civicadigihack17", UriKind.Relative),
+                RequestUri = new Uri("1.1/search/tweets.json?q=%23civicadigihack17&tweet_mode=extended", UriKind.Relative),
                 Method = HttpMethod.Get
             };
             getTweetsRequest.Headers.Authorization = new AuthenticationHeaderValue("Bearer", oAuthTokenResponse.AccessToken);
@@ -45,7 +49,24 @@ namespace HackRHub.Controllers
             var getTweetsResponse = await client.SendAsync(getTweetsRequest);
             var tweetsJson = await getTweetsResponse.Content.ReadAsStringAsync();
 
-            return Ok(tweetsJson);
+            dynamic obj = JsonConvert.DeserializeObject(tweetsJson);
+
+            var tweets = new List<Tweet>();
+
+            foreach (dynamic status in obj.statuses)
+            {
+                tweets.Add(new Tweet
+                {
+                    Text = status.full_text,
+                    UserName = status.user.name,
+                    UserScreenName = status.user.screen_name,
+                    HasMedia = status?.entities?.media?.HasValues ?? false,
+                    MediaUrls = ((JArray)status?.extended_entities?.media)?.Select(x => x["media_url"].ToString()).ToArray() ?? new string[0],
+                    People = new Person[0]
+                });
+            }
+
+            return Ok(tweets);
         }
     }
 }
