@@ -1,0 +1,54 @@
+<template>
+    <require from="../hackr-nav/hackr-nav"></require>
+    <require from="./twitter.css"></require>
+    <hackr-nav></hackr-nav>
+    <section class="section">
+        <div class="container">
+            <h1 class="title hackr-title is-1">On Twitter...</h1>
+            <div class="tweet" repeat.for="tweet of tweets">
+                <div class="columns">
+                    <div class="column is-half">
+                        <article class="media">
+                            <div class="media-left">
+                                <figure class="image is-64x64">
+                                    <img src="${tweet.UserProfileImageUrl}">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <div class="content">
+                                    <p class="title is-4">${tweet.UserName}</p>
+                                    <p class="subtitle is-6"><a href="https://twitter.com/${tweet.UserScreenName}">@${tweet.UserScreenName}</a></p>
+                                </div>
+                            </div>
+                        </article>
+                        <div class="tweet-text">${tweet.Text}</div>
+                        <div repeat.for="mediaUrl of tweet.MediaUrls">
+                            <img class="tweet-image" src="${mediaUrl}"></img>
+                        </div>
+                        <div class="tweet-created-date">${tweet.CreatedAt}</div>
+                    </div>
+                    <div class="column is-half" if.bind="tweet.People.length > 0">
+                        <div class="tweet-subtitle">In this tweet:</div>
+                        <div class="columns is-multiline">
+                            <div repeat.for="person of tweet.People" class="column is-half">
+                                <article class="media">
+                                    <div class="media-left">
+                                        <figure class="image is-64x64">
+                                            <img src="static/img/${person.PersonId}.jpg">
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <div class="content">
+                                            <p class="title is-4">${person.Name}</p>
+                                            <p class="subtitle is-6">${person.Title}</p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>

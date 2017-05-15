@@ -17,8 +17,8 @@ export class App {
             moduleId: './components/teams/teams', title:'Teams' },
           { route: 'vote',  name: 'vote', nav: true,
             moduleId: './components/vote/vote', title:'Vote' },
-          { route: 'photos',  name: 'photos', nav: true,
-            moduleId: './components/photos/photos', title:'#civicadigihack17' },
+          { route: 'twitter',  name: 'twitter', nav: true,
+            moduleId: './components/twitter/twitter', title:'#civicadigihack17' },
           { route: 'results',  name: 'results', nav: true,
             moduleId: './components/vote-results/vote-results', title:'Results' }
       ]);

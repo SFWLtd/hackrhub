@@ -1,36 +1,37 @@
 @font-face {
     font-family: 'Brandon';
-    src: url('../fonts/BrandonText-Light.otf');
+    src: url('../static/fonts/BrandonText-Light.otf');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'Brandon';
-    src: url('../fonts/BrandonText-Bold.otf');
+    src: url('../static/fonts/BrandonText-Bold.otf');
     font-weight: 700;
     font-style: normal;
 }
 @font-face {
     font-family: 'PT Sans';
-    src: url('../fonts/PT_Sans-Web-Regular.ttf');
+    src: url('../static/fonts/PT_Sans-Web-Regular.ttf');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'PT Sans';
-    src: url('../fonts/PT_Sans-Web-Bold.ttf');
+    src: url('../static/fonts/PT_Sans-Web-Bold.ttf');
     font-weight: 700;
     font-style: normal;
 }
 @font-face {
     font-family: 'Typewriter';
-    src: url('../fonts/American Typewriter Light.ttf');
+    src: url('../static/fonts/American Typewriter Light.ttf');
     font-weight: 400;
     font-style: normal;
 }
 
 html {
-    overflow: auto !important;
+    overflow-y: scroll !important;
+    overflow-x: auto !important;
 }
 
 body {
@@ -66,6 +67,7 @@ h2.vote-result-title {
 
 .hackr-nav .nav-item a, .hackr-nav a.nav-item {
     color: #ddd;
+    font-size: 20px;
 }
 
 .hackr-nav .nav-item a:hover, .hackr-nav a.nav-item:hover {
@@ -85,6 +87,7 @@ h2.vote-result-title {
 .top-logo {
     height: 50px;
     margin-top: 10px;
+    image-rendering: -webkit-optimize-contrast;
 }
 
 .hackr-title {
@@ -194,7 +197,7 @@ h2.vote-result-title {
 .button.is-primary {
     background-color: rgb(245, 75, 117) !important;
     text-transform: uppercase;
-    font-size: 28px;
+    font-size: 20px;
 }
 
 .hidden {
@@ -207,7 +210,7 @@ h2.vote-result-title {
 
 .hackr-idea {
     font-family: 'Typewriter';
-    font-size: 72px;
+    font-size: 32px;
     width: 100%;
     text-align: left;
     display: inline-block;

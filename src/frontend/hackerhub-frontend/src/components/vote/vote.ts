@@ -7,12 +7,11 @@ export class Vote {
   }
 
   attached() {
-    let stupidHack = this;
     fetch('https://civica-hackathon-api.azurewebsites.net/api/teams', {
         method: 'GET',
         mode: 'cors'
-      }).then(function (response) {
-          response.json().then(function(data) {
+      }).then(response => {
+          response.json().then(data => {
 
               let teamNumber: number = 1;
               data = data.filter(function(team) {
@@ -32,7 +31,7 @@ export class Vote {
                   return false;
               });
 
-              stupidHack.teams = data;
+              this.teams = data;
           });
       });
     }

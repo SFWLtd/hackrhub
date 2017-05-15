@@ -1,0 +1,28 @@
+.tweet {
+    border-bottom: 1px solid #d4d4d4;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.tweet-text {
+    margin: 10px 0;
+}
+
+.tweet-subtitle {
+    border-bottom: 5px solid rgb(245, 75, 117);
+    display: inline-block;
+    font-size: 30px;
+    line-height: 30px;
+    margin-bottom: 10px;
+    font-family: 'Typewriter';
+    font-weight: 600;
+}
+
+.tweet-image {
+    width: 500px;
+}
+
+.tweet-created-date {
+    color: #666;
+    font-style: italic;
+}
