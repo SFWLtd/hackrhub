@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -18,14 +19,15 @@ namespace HackRHub.Controllers
 {
     public class TwitterController : ApiController
     {
-        static string consumerKey = System.Configuration.ConfigurationManager.AppSettings["TwitterConsumerKey"];
-        static string consumerSecret = System.Configuration.ConfigurationManager.AppSettings["TwitterConsumerSecret"];
+        static string consumerKey = ConfigurationManager.AppSettings["TwitterConsumerKey"];
+        static string consumerSecret = ConfigurationManager.AppSettings["TwitterConsumerSecret"];
+        static string twitterSearchQuery = ConfigurationManager.AppSettings["TwitterSearchQuery"];
 
-        static string apiKey = System.Configuration.ConfigurationManager.AppSettings["FaceApiKey"];
+        static string apiKey = ConfigurationManager.AppSettings["FaceApiKey"];
         static string personGroupId = "civicans";
 
-        static string dbKey = System.Configuration.ConfigurationManager.AppSettings["DocumentDbKey"];
-        static string dbEndpoint = System.Configuration.ConfigurationManager.AppSettings["DocumentDbEndpoint"];
+        static string dbKey = ConfigurationManager.AppSettings["DocumentDbKey"];
+        static string dbEndpoint = ConfigurationManager.AppSettings["DocumentDbEndpoint"];
 
         [HttpGet]
         [Route("api/twitter/tweets")]
@@ -51,7 +53,7 @@ namespace HackRHub.Controllers
 
             var getTweetsRequest = new HttpRequestMessage()
             {
-                RequestUri = new Uri("1.1/search/tweets.json?q=%23civicadigihack17 AND -filter:retweets AND -filter:replies&tweet_mode=extended&count=100", UriKind.Relative),
+                RequestUri = new Uri($"1.1/search/tweets.json?q={twitterSearchQuery} AND -filter:retweets AND -filter:replies&tweet_mode=extended&count=100", UriKind.Relative),
                 Method = HttpMethod.Get
             };
             getTweetsRequest.Headers.Authorization = new AuthenticationHeaderValue("Bearer", oAuthTokenResponse.AccessToken);
