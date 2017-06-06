@@ -5,6 +5,9 @@
     <section class="section">
         <div class="container">
             <h1 class="title hackr-title is-1">On Twitter...</h1>
+            <div if.bind="isLoading" class="spinner-wrapper">
+                <img src="static/svg/spinner.svg"/>
+            </div>
             <div class="tweet" repeat.for="tweet of tweets">
                 <div class="columns">
                     <div class="column is-half">
